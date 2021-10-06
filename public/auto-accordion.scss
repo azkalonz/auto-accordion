@@ -1,9 +1,24 @@
-body {
-  margin: 0;
-  background: #f8f9fa;
-}
 $mobile-breakpoint: 1269px;
 $tabs-transition: all 0.45s ease-in-out;
+
+$colors: (
+  1: (
+    color: #a566ff,
+  ),
+  2: (
+    color: #f7e19a,
+  ),
+  3: (
+    color: #f6aaaa,
+  ),
+  4: (
+    color: #a5eded,
+  ),
+);
+
+@mixin tabFill($color) {
+  fill: $color;
+}
 
 .auto-accordion {
   position: fixed;
@@ -21,6 +36,20 @@ $tabs-transition: all 0.45s ease-in-out;
     max-height: none;
     overflow: hidden;
   }
+  @each $name, $value in $colors {
+    .accordion-item.is-active:nth-child(#{$name}) {
+      .accordion-title {
+        h1 {
+          color: #000000;
+        }
+        .icon {
+          * {
+            @include tabFill(map-get($value, color));
+          }
+        }
+      }
+    }
+  }
   .accordion-item {
     position: relative;
     background-color: #ffffff;
@@ -31,7 +60,6 @@ $tabs-transition: all 0.45s ease-in-out;
     flex-direction: column;
     transition: $tabs-transition;
     border: 1px solid #ebebeb;
-    border-bottom: none;
     box-sizing: border-box;
     min-width: 0;
     z-index: 1;
@@ -40,19 +68,6 @@ $tabs-transition: all 0.45s ease-in-out;
       max-height: 1000px;
       @media screen and (min-width: $mobile-breakpoint) {
         border-radius: 8px 8px 0px 0px;
-      }
-      .accordion-title {
-        h1 {
-          color: #a566ff;
-        }
-        .icon {
-          * {
-            fill: #a566ff;
-            @media screen and(max-width: $mobile-breakpoint) {
-              fill: #f7e19a;
-            }
-          }
-        }
       }
     }
     &:not(.is-active) {
@@ -99,22 +114,23 @@ $tabs-transition: all 0.45s ease-in-out;
     justify-content: space-between;
     p,
     h1 {
-      padding: 0 43px 10px 43px;
+      padding: 0 43px 0 43px;
       margin: 0;
     }
     p {
-      font-family: "Open Sans", sans-serif;
+      font-family: "DM Sans", sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 16px;
       line-height: 33px;
       color: #000000;
       opacity: 0.6;
+      margin-bottom: 28px;
     }
     h1 {
       font-family: "Bw Gradual";
       font-weight: 400;
-      margin-bottom: 8px;
+      margin-bottom: 28px;
       font-style: normal;
       font-weight: normal;
       font-size: 24px;
@@ -122,12 +138,12 @@ $tabs-transition: all 0.45s ease-in-out;
     }
   }
   .accordion-title {
-    font-family: "Open Sans", sans-serif;
+    font-family: "DM Sans", sans-serif;
     min-height: 79px;
     height: 79px;
     display: flex;
     align-items: center;
-    padding: 0 43px 10px 43px;
+    padding: 0 43px 0 43px;
     .icon {
       width: 22.41px;
       height: auto;
@@ -136,7 +152,7 @@ $tabs-transition: all 0.45s ease-in-out;
     }
     h1 {
       font-style: normal;
-      font-weight: normal;
+      font-weight: 700;
       font-size: 14px;
       line-height: 23px;
       letter-spacing: 0.02em;
@@ -150,14 +166,14 @@ $tabs-transition: all 0.45s ease-in-out;
     height: 69px;
     display: flex;
     align-items: center;
-    padding: 0 43px 10px 43px;
+    padding: 0 43px 0 43px;
     .icon {
       margin-right: 21px;
     }
     * {
-      font-family: "Open Sans", sans-serif;
+      font-family: "DM Sans", sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 700;
       font-size: 14px;
       line-height: 23px;
       letter-spacing: 0.02em;

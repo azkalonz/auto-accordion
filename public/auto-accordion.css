@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  background: #f8f9fa;
-}
-
 .auto-accordion {
   position: fixed;
   bottom: 0;
@@ -30,6 +25,38 @@ body {
   }
 }
 
+.auto-accordion .accordion-item.is-active:nth-child(1) .accordion-title h1 {
+  color: #000000;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(1) .accordion-title .icon * {
+  fill: #a566ff;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(2) .accordion-title h1 {
+  color: #000000;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(2) .accordion-title .icon * {
+  fill: #f7e19a;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(3) .accordion-title h1 {
+  color: #000000;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(3) .accordion-title .icon * {
+  fill: #f6aaaa;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(4) .accordion-title h1 {
+  color: #000000;
+}
+
+.auto-accordion .accordion-item.is-active:nth-child(4) .accordion-title .icon * {
+  fill: #a5eded;
+}
+
 .auto-accordion .accordion-item {
   position: relative;
   background-color: #ffffff;
@@ -52,7 +79,6 @@ body {
   -webkit-transition: all 0.45s ease-in-out;
   transition: all 0.45s ease-in-out;
   border: 1px solid #ebebeb;
-  border-bottom: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-width: 0;
@@ -67,20 +93,6 @@ body {
 @media screen and (min-width: 1269px) {
   .auto-accordion .accordion-item.is-active {
     border-radius: 8px 8px 0px 0px;
-  }
-}
-
-.auto-accordion .accordion-item.is-active .accordion-title h1 {
-  color: #a566ff;
-}
-
-.auto-accordion .accordion-item.is-active .accordion-title .icon * {
-  fill: #a566ff;
-}
-
-@media screen and (max-width: 1269px) {
-  .auto-accordion .accordion-item.is-active .accordion-title .icon * {
-    fill: #f7e19a;
   }
 }
 
@@ -139,24 +151,25 @@ body {
 
 .auto-accordion .accordion-content p,
 .auto-accordion .accordion-content h1 {
-  padding: 0 43px 10px 43px;
+  padding: 0 43px 0 43px;
   margin: 0;
 }
 
 .auto-accordion .accordion-content p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 33px;
   color: #000000;
   opacity: 0.6;
+  margin-bottom: 28px;
 }
 
 .auto-accordion .accordion-content h1 {
   font-family: "Bw Gradual";
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-bottom: 28px;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -164,7 +177,7 @@ body {
 }
 
 .auto-accordion .accordion-title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   min-height: 79px;
   height: 79px;
   display: -webkit-box;
@@ -173,7 +186,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 43px 10px 43px;
+  padding: 0 43px 0 43px;
 }
 
 .auto-accordion .accordion-title .icon {
@@ -189,7 +202,7 @@ body {
 
 .auto-accordion .accordion-title h1 {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   font-size: 14px;
   line-height: 23px;
   letter-spacing: 0.02em;
@@ -207,7 +220,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 43px 10px 43px;
+  padding: 0 43px 0 43px;
 }
 
 .auto-accordion .accordion-footer .icon {
@@ -215,9 +228,9 @@ body {
 }
 
 .auto-accordion .accordion-footer * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   font-size: 14px;
   line-height: 23px;
   letter-spacing: 0.02em;
